@@ -87,7 +87,7 @@ public class LonelyServerPlugin extends JavaPlugin {
         public void onPlayerJoin(PlayerJoinEvent e) {
             //System.out.println("This method observes that there are " + Bukkit.getServer().getOnlinePlayers().length + " players online.");
             if(Bukkit.getServer().getOnlinePlayers().length == 1 && mostRecentLogoffPlayer != null) {
-                e.getPlayer().sendMessage(color + "The last player was online " + getMinutesSinceLastLogoff() + " minutes ago.");
+                e.getPlayer().sendMessage(color + "The last player, " + mostRecentLogoffPlayer.getName() + ", was online " + getMinutesSinceLastLogoff() + " minutes ago.");
                 mcLogger.log(Level.INFO, e.getPlayer().getName() + " logged in alone, and was notified that the last player only logged off " + getMinutesSinceLastLogoff() + " minutes ago.");
             }
         }
